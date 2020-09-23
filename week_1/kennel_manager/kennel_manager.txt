@@ -1,0 +1,20 @@
+Classes
+    animals
+
+    fields:
+        age = int
+        breed = String
+        kennelCount = int
+        name = String
+        rabiesUpToDate = boolean
+        sex = char
+        weight = double
+    setters
+    getters
+
+
+Sub class
+    dogs
+    cats
+
+COUNT needs to get done somewhere.
