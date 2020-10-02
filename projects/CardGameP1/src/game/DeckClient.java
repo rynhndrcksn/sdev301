@@ -23,7 +23,7 @@ public class DeckClient {
         shuffleDeck(myDeck);
 
         System.out.println("Dealing a Few Cards...\n");
-        dealCards(DEALT,myDeck);
+        dealCards(myDeck);
 
 
         System.out.println("Shuffled deck again...\n");
@@ -40,9 +40,9 @@ public class DeckClient {
         System.out.println();
     }
 
-    private static void dealCards(int numCards, StandardDeck myDeck) {
+    private static void dealCards(StandardDeck myDeck) {
 
-        for (int i = 0; i < numCards ; i++) {
+        for (int i = 0; i < DeckClient.DEALT; i++) {
             System.out.println("Dealt a "+ myDeck.dealTopCard().getCardText());
         }
         System.out.println();
