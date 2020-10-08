@@ -1,9 +1,11 @@
+import java.awt.Color;
+
 /**
  * This class uses static methods to draw a colored bitmap image from an
  * array of bits.  The pic array contains the color information to draw 48
  * squares. Each 2 bit sequence defines the color of the individual square.(48 total)
  * This class uses the DrawingPanel.java class
- * from the Building Java Programs textbook by Reges and  Stuart
+ * from the Building Java Programs textbook by reges and  Stuart
  * (make sure the DrawingPanel.java file is placed in the same source code folder so everything compiles nicely)
  * @author Susan Uland
  *
@@ -13,8 +15,6 @@
  *
  */
 
-import java.awt.Color;
-
 public class BitMapImage {
 	private static DrawingPanel canvas;
 	private static final int SIZE = 50;
@@ -23,13 +23,13 @@ public class BitMapImage {
 	private static final int NUM_SQUARES=8;
 
 	// The pic array represents 6 rows of 8 colored squares
-	private static short[] pic = {
-			(short) 0b1010101010101010,
-			(short) 0b1010010110010110,
-			(short) 0b1001110001011010,
-			(short) 0b1001000001011010,
-			(short) 0b1010010110010110,
-			(short) 0b1010101010101010,
+	private static final short[] pic = {
+			(short) 0xAAAA,
+			(short) 0xA596,
+			(short) 0x9C5A,
+			(short) 0x905A,
+			(short) 0xA596,
+			(short) 0xAAAA,
 	};
 
 	/**
@@ -43,9 +43,9 @@ public class BitMapImage {
 		// initialize the y coordinate of the upper left hand corner of the square
 		int y = 0;
 		// for each row of the bitmap image
-		for (int i = 0; i < pic.length; i++) {
+		for (short value : pic) {
 			// draw the row of colored squares
-			drawRow(pic[i], y);
+			drawRow(value, y);
 			// update y coordinate so next row is positioned correctly
 			y += SIZE;
 		}
@@ -62,13 +62,13 @@ public class BitMapImage {
 		int x = 0;
 
 		// TODO: create a bit mask which can zero out all bits but the rightmost 2 bits
-
-
+		// assign as a binary number or as a decimal
+		short mask = 0b0000_0000_0000_0011;
 
 		for (int i = 1; i <= NUM_SQUARES; i++) {
 			// TODO: zero out all bits but the rightmost 2 bits which will now indicate
 			// an Orange, Blue, Black, or White color
-			short col = 0;
+			short col = (short)(mask & colors);
 
 			// draw a filled rectangle with color=col at upper left hand corner (x,y)
 			drawSquare(col, x, y);
@@ -77,7 +77,7 @@ public class BitMapImage {
 			x += SIZE;
 
 			// TODO: shift all bits right 2 spaces to process next 2 bit color(Orange,Blue,Black,White) to be drawn
-
+			colors = (short)(colors >> 2);
 		}
 
 
@@ -90,6 +90,7 @@ public class BitMapImage {
 	 * @param y - the y coordinate of the upper left corner of the drawn square
 	 */
 	public static void drawSquare(short col, int x, int y) {
+		// TODO: TryIt, change the constants on line below
 		final short WHITE = 0b00, ORANGE = 0b01, BLUE = 0b10, BLACK = 0b11;
 		switch (col) {
 			case WHITE:
