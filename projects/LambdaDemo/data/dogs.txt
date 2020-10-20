@@ -1,0 +1,5 @@
+Fido,12,50.5
+Forrest,10,105
+Bruno,3,46.5
+Fluffy,5,85.6
+Sam,7,55.8
