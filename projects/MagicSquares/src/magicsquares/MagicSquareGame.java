@@ -140,7 +140,6 @@ public class MagicSquareGame {
 			} else if (both.hasAlreadyChosen((byte) num)) {
 				System.out.println("A player has already chosen " + num);
 			} else {
-				// decrement num so it doesn't overflow anything
 				validNum = true;
 			}
 		}
