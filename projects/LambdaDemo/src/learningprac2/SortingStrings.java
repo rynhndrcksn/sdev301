@@ -27,7 +27,7 @@ public class SortingStrings {
      */
     public static void simpleSort(List<String> wordList){
         // one line of code collections.sort(wordlist, come up with simple lambda expression
-        wordList.sort((String s1, String s2) -> );
+        wordList.sort(() -> );
     }
 
     /**
