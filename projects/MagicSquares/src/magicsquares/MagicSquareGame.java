@@ -1,7 +1,6 @@
 package magicsquares;
 
 import java.util.Scanner;
-import java.util.function.BinaryOperator;
 
 /**
  * MagicSquares is a game that allows 2 users to compete where they're trying to get their choices to equal 15
