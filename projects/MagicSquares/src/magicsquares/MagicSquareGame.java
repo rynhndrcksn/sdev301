@@ -82,12 +82,12 @@ public class MagicSquareGame {
 	 */
 	public static boolean isDraw(MagicSquare both) {
 		int count = 0;
-		for (int i = 0; i < 9; i++) {
+		for (int i = 0; i < 10; i++) {
 			if (both.hasAlreadyChosen((byte) i)) {
 				count++;
 			}
 		}
-		return count == 8;
+		return count == 10;
 	}
 
 	/**
@@ -108,7 +108,8 @@ public class MagicSquareGame {
 		boolean result = false;
 		System.out.println(p.getChoices());
 		for (short winCase : winCases) {
-			if (p.getChoices() == winCase) {
+			// you need to & them together otherwise it will fail if they have extra nums - THANKS SUSAN
+			if ((p.getChoices() & winCase) == winCase) {
 				result = true;
 				break;
 			}
