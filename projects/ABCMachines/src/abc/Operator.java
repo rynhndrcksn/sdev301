@@ -5,5 +5,4 @@ public enum Operator {
      SUB,
      MULT,
      DIV
-
 }
