@@ -67,9 +67,9 @@ public class ControlUnit {
                 break;
             case 4: // st
                 machine.getMemory()[getMemAddr()] = registers[getSrc1Register()];
+                break;
             case 5: // ld
                 machine.getRegisters()[getSrc1Register()] = machine.getMemory()[getMemAddr()];
-                // maybe change this ^ to src1 for conciseness if it works?
                 break;
             case 6: // br
                 if (src1 == 4 && machine.getAlu().getStatus() == Nzp.NEGATIVE ||
@@ -78,8 +78,10 @@ public class ControlUnit {
                     // jump to the new address and insert it into the pc
                     machine.setPc(getMemAddr());
                 }
+                break;
             case 7: // jmp
                 machine.setPc(getMemAddr());
+                break;
         }
 
     }
