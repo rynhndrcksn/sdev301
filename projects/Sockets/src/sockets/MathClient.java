@@ -42,7 +42,6 @@ public class MathClient {
 			e.printStackTrace();
 		}
 
-
 		System.out.println("Math client is exiting...");
 	}
 }

@@ -63,10 +63,11 @@ public class MathServer {
 		out.println(num1+" * "+num2+" = "+(num1*num2));
 		if (num2 != 0) {
 			out.println(num1+" / "+num2+" = "+(num1/num2));
+			out.println(num1+" % "+num2+" = "+(num1%num2));
 		} else {
 			out.println("You can't divide by 0");
+			out.println("You can't mod by 0");
 		}
-		out.println(num1+" % "+num2+" = "+(num1%num2));
 		out.flush();
 	}
 }
