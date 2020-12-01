@@ -3,8 +3,15 @@ package sockets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.net.UnknownHostException;
 import java.util.Scanner;
+
+/**
+ * @author Ryan Hendrickson
+ * date: December 1st, 2020.
+ * filename: MathClient.java
+ * purpose: acts as a client to connect to our MathServer, gives exposure to sockets
+ * @version 1.0
+ */
 
 public class MathClient {
 	public static void main(String[] args) {
@@ -31,11 +38,10 @@ public class MathClient {
 			while (in.hasNextLine()) {
 				System.out.println(in.nextLine());
 			}
-		} catch (UnknownHostException e) { // this is for the localhost possibly being unknown
-			e.printStackTrace();
-		} catch (IOException e) { // this is for the MATH_PORT possible being wrong
+		} catch (IOException e) { // this is for the localhost possibly being unknown, also catches MATH_PORT errors
 			e.printStackTrace();
 		}
+
 
 		System.out.println("Math client is exiting...");
 	}

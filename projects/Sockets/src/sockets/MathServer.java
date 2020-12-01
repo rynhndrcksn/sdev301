@@ -9,6 +9,14 @@ import java.net.Socket;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * @author Ryan Hendrickson
+ * date: December 1st, 2020.
+ * filename: MathServer.java
+ * purpose: acts as a server for our MathClient to connect to, gives exposure to sockets
+ * @version 1.0
+ */
+
 // must be started before MathClient so it has something to connect to
 public class MathServer {
 	// public field so client can access MATH_PORT
